@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Nusantara - Pemesanan Makanan Online</title>
+    <!-- Menghubungkan ke file style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">🍽️ Warung Nusantara</div>
+        <button class="cart-btn" onclick="toggleCart()">
+            🛒 Keranjang (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+    <!-- Banner -->
+    <section class="hero">
+        <h1>Lapar? Pesan Makanan Favoritmu Sekarang!</h1>
+        <p>Cita rasa autentik, cepat sampai, dan harga bersahabat.</p>
+    </section>
+
+    <!-- Filter & Pencarian -->
+    <div class="controls">
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterMenu('semua', this)">Semua</button>
+            <buttonf class="cat-btn" onclick="filterMenu('makanan', this)">Makanan</button>
+            <button class="cat-btn" onclick="filterMenu('minuman', this)">Minuman</button>
+            <button class="cat-btn" onclick="filterMenu('cemilan', this)">Cemilan</button>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cari menu..." onkeyup="searchMenu()">
+        </div>
+    </div>
+
+    <!-- Daftar Menu -->
+    <main class="container" id="menu-container">
+        <!-- Item menu akan dimuat lewat JavaScript -->
+    </main>
+
+    <!-- Modal Keranjang -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Keranjang Pesanan</h2>
+                <button class="close-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            
+            <div id="cart-items">
+                <p style="text-align: center; color: #777;">Keranjang masih kosong.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Pemesan</label>
+                <input type="text" id="customerName" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+                <label>Nomor Meja / Alamat Pengiriman</label>
+                <textarea id="customerAddress" rows="2" placeholder="Contoh: Meja 05 atau Jl. Merdeka No. 10"></textarea>
+            </div>
+
+            <div class="total-section">
+                <span>Total Bayar:</span>
+                <span id="cart-total">Rp 0</span>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">Pesan Sekarang</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Warung Nusantara - Project Web Pemesanan Makanan
+    </footer>
+
+    <!-- Menghubungkan ke file script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
